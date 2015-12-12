@@ -3,21 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>linux基础之错误信息 | Green</title>
+  <title>Archives: 2015/3 | Green</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简介
-在处理Linux系统出现的各种故障时，故障的症状是最先发现的，而导致这以故障的原因才是最终排除故障的关键。熟悉Linux系统的日志管理，了解常见故障的分析与解决办法，将有助于管理员快速定位故障点。“对症下药”及时解决各种系统问题。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="linux基础之错误信息">
-<meta property="og:url" content="http://yoursite.com/2014/12/03/linux基础之错误信息/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Green">
+<meta property="og:url" content="http://yoursite.com/archives/2015/03/index.html">
 <meta property="og:site_name" content="Green">
-<meta property="og:description" content="简介
-在处理Linux系统出现的各种故障时，故障的症状是最先发现的，而导致这以故障的原因才是最终排除故障的关键。熟悉Linux系统的日志管理，了解常见故障的分析与解决办法，将有助于管理员快速定位故障点。“对症下药”及时解决各种系统问题。">
-<meta property="og:updated_time" content="2015-11-29T11:45:47.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux基础之错误信息">
-<meta name="twitter:description" content="简介
-在处理Linux系统出现的各种故障时，故障的症状是最先发现的，而导致这以故障的原因才是最终排除故障的关键。熟悉Linux系统的日志管理，了解常见故障的分析与解决办法，将有助于管理员快速定位故障点。“对症下药”及时解决各种系统问题。">
+<meta name="twitter:title" content="Green">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="Green" type="application/atom+xml">
   
@@ -202,122 +198,57 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-linux基础之错误信息" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2014/12/03/linux基础之错误信息/" class="article-date">
-  	<time datetime="2014-12-03T10:57:30.000Z" itemprop="datePublished">2014-12-03</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2015/03/03/linux基础之错误信息/" class="archive-article-date">
+  	<time datetime="2015-03-03T10:57:30.000Z" itemprop="datePublished">Mar 3</time>
 </a>
-    </div>
+        </div>
+    	 
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      linux基础之错误信息
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/03/03/linux基础之错误信息/">linux基础之错误信息</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux基础/">linux基础</a></li></ul>
 	</div>
 
-        
+          
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/兴趣篇/">兴趣篇</a>
 	</div>
 
 
+        </div>
         <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="简介">简介</h1><hr>
-<p>在处理Linux系统出现的各种故障时，故障的症状是最先发现的，而导致这以故障的原因才是最终排除故障的关键。熟悉Linux系统的日志管理，了解常见故障的分析与解决办法，将有助于管理员快速定位故障点。“对症下药”及时解决各种系统问题。</p>
-<a id="more"></a>
-<p>linux中总是会因为多多少少的原因导致命令输入错误，这个时候我们可以通过屏幕上显示的错误信息来解决，举个例子来说，假如想执行<code>apt-get</code>这个命令，但是命令行却显示的是</p>
-<pre><code>bash: apt-<span class="built_in">get</span>: <span class="command"><span class="keyword">command</span> <span class="title">not</span> <span class="title">found</span>    </span>
-</code></pre><p>字面上的意思是说指令找不到，所以说，系统上面可能并没有apt-get这个指令，通常出现<code>command not found</code>的可能原因为：</p>
-<ul>
-<li>这个指令不存在，因为该软件没有安装，解决方法就是安装该软件；</li>
-<li>这个指令所在的目录目前的用户并没有将它加入指令搜索路径中，请参考bash的PATH说明；</li>
-<li>只能说你打错指令了！！</li>
-</ul>
-<p>配置文件<code>/etc/syslog.conf</code>中，受syslogd服务管理的日志文件都是Linux系统中最主要的日志文件，他们记录了Linux系统中内核、用户认证、邮件、计划任务等最基本的系统消息。在Linux内核中，根据日志消息的重要程度不同，将其分为不同的优先级别（数字等级越小，优先级越高，消息越重要）。</p>
-<pre><code>&gt;<span class="number">0</span> <span class="function"><span class="title">EMERG</span><span class="params">(紧急)</span></span>：会导致主机系统不可用的情况。 
-
-&gt;<span class="number">1</span> <span class="function"><span class="title">ALERT</span><span class="params">(警告)</span></span>：必须马上采取措施解决的问题。 
-
-&gt;<span class="number">2</span> CRIT（严重）：比较严重的情况。 
-
-&gt;<span class="number">3</span> ERR（错误）：运行出现错误。 
-
-&gt;<span class="number">4</span> <span class="function"><span class="title">WARNING</span><span class="params">(提醒)</span></span>：可能影响系统功能，需要提醒用户的重要事件。 
-
-&gt;<span class="number">5</span> <span class="function"><span class="title">NOTICE</span><span class="params">(注意)</span></span>：不会影响正常功能，但是需要注意的事件。 
-
-&gt;<span class="number">6</span> INFO (信息)：一般信息。 
-
-&gt;<span class="number">7</span> <span class="function"><span class="title">BEBUG</span><span class="params">(调试)</span></span>：程序或系统调试信息等。 
-</code></pre>
-      
-    </div>
-    
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2014/12/11/如何上传本地文件到github/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          如何上传本地文件到github
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2014/09/30/如何写一篇hexo博客/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何写一篇hexo博客</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
-
-<div class="share">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到：</span>
-		<a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
-
-
-
-
+    
 
 </div>
       <footer id="footer">
@@ -344,8 +275,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
