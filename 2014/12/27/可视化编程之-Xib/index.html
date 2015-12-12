@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>可视化编程之-Xib | Green</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.1 什么是Xib？xib就是一种文件的后缀，我们要使用Interface Builder工具对它进行编辑。xib的作用就是描绘页面中的布局，可以让我们及时看到效果，并且也比代码要方便快速的多。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="可视化编程之-Xib">
+<meta property="og:url" content="http://yoursite.com/2014/12/27/可视化编程之-Xib/index.html">
+<meta property="og:site_name" content="Green">
+<meta property="og:description" content="1.1 什么是Xib？xib就是一种文件的后缀，我们要使用Interface Builder工具对它进行编辑。xib的作用就是描绘页面中的布局，可以让我们及时看到效果，并且也比代码要方便快速的多。">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/9c2363adgw1eo7p5ta6mfj21kw148ae6.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/9c2363adgw1eo7pppa1nhj20be0dwmy3.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/9c2363adgw1eo7re14u6wj214k0nwdi0.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/9c2363adgw1eo7rh05g5gj214k0nwgos.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/9c2363adgw1eo7rk9hhm0j21kw14k0y3.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/9c2363adgw1eo7rn9la4gj20y40ecwgm.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/9c2363adgw1eo7pwi0fvzj21kw0yeags.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/9c2363adgw1eo7s4ekfjyj21a80sin2n.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/9c2363adgw1eo7qn53z9kj20fg0860th.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/9c2363adgw1eo7qx1mei1j20fg096dgq.jpg">
+<meta property="og:updated_time" content="2015-11-29T11:45:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="可视化编程之-Xib">
+<meta name="twitter:description" content="1.1 什么是Xib？xib就是一种文件的后缀，我们要使用Interface Builder工具对它进行编辑。xib的作用就是描绘页面中的布局，可以让我们及时看到效果，并且也比代码要方便快速的多。">
+  
+    <link rel="alternative" href="/atom.xml" title="Green" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://a.hiphotos.baidu.com/image/h%3D300/sign=f92d8f72912bd4075dc7d5fd4b899e9c/9f2f070828381f30192d9cf3af014c086e06f0b0.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Green</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/tags/相册">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CocoaPosd使用详解/" style="font-size: 10px;">CocoaPosd使用详解</a> <a href="/tags/Vim-编辑器/" style="font-size: 10px;">Vim 编辑器</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo教程/" style="font-size: 10px;">hexo教程</a> <a href="/tags/hexo新建博文/" style="font-size: 10px;">hexo新建博文</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/linux基础/" style="font-size: 10px;">linux基础</a> <a href="/tags/可视化编程/" style="font-size: 15px;">可视化编程</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/真机/" style="font-size: 10px;">真机</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Green</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://a.hiphotos.baidu.com/image/h%3D300/sign=f92d8f72912bd4075dc7d5fd4b899e9c/9f2f070828381f30192d9cf3af014c086e06f0b0.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Green</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/tags/相册">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-可视化编程之-Xib" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/12/27/可视化编程之-Xib/" class="article-date">
+  	<time datetime="2014-12-27T13:13:26.000Z" itemprop="datePublished">2014-12-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      可视化编程之-Xib
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/可视化编程/">可视化编程</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/技术篇/">技术篇</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-1_什么是Xib？">1.1 什么是Xib？</h2><p>xib就是一种文件的后缀，我们要使用Interface Builder工具对它进行编辑。xib的作用就是描绘页面中的布局，可以让我们及时看到效果，并且也比代码要方便快速的多。<br><img src="http://ww1.sinaimg.cn/large/9c2363adgw1eo7p5ta6mfj21kw148ae6.jpg" alt=""></p>
+<a id="more"></a>
+<p>当我们使用MVC模式去编写项目的时候，创建了一个UIViewController，它就是MVC中的C，还需要创建一个View，表示MVC中的V。之前我们的做法都是继承UIView类，创建一个自定义View，然后把所有有关视图的代码都写到自定义View中，虽然把Controller类进行了瘦身，但是View中的代码依然看起来让人头疼，每添加一个小控件都需要好几行的代码，一个简单的登录页面，就需要一大段的代码，很烦人。不过有了xib，我们做一个登录页面出来，不仅不需要写代码了，还可以通过拖线的方式把属性、方法都生成，非常的方便。</p>
+<h2 id="1-2_nib又是什么东西？">1.2 nib又是什么东西？</h2><p>项目进行编译之后，xib文件会保存到我们的Bundle中，被编译成了nib文件，</p>
+<p><img src="http://ww2.sinaimg.cn/large/9c2363adgw1eo7pppa1nhj20be0dwmy3.jpg" alt=""></p>
+<p>简单来说，<code>xib</code>就是编译之前的格式，<code>nib</code>就是编译之后的格式。至于你到底叫它xib还是nib，都随你喜欢啦</p>
+<h2 id="1-3-_如何使用">1.3. 如何使用</h2><h3 id="1-3-1_xib文件的创建">1.3.1 xib文件的创建</h3><p>当我们创建视图控制器的时候，我们把这个选项选中，<br><img src="http://ww2.sinaimg.cn/large/9c2363adgw1eo7re14u6wj214k0nwdi0.jpg" alt=""></p>
+<p>这样我们就可以创建一个自带xib文件的视图控制器了。</p>
+<p>如果说创建视图控制器的时候忘记勾选了，也不要着急，我们可以单独创建一个xib文件，<br><img src="http://ww3.sinaimg.cn/large/9c2363adgw1eo7rh05g5gj214k0nwgos.jpg" alt=""></p>
+<p>单独创建xib文件的时候，名字最好和它所对应的控制器相同。</p>
+<p>注意，虽然你单独创建出来了xib文件，但是需要注意的是，我们还要将xib和控制器类进行关联，<br>在Class中输入xib对应的控制器的类名，<br><img src="http://ww4.sinaimg.cn/large/9c2363adgw1eo7rk9hhm0j21kw14k0y3.jpg" alt=""></p>
+<p>除了这个，还有：在File’s Owner上右击，会出现黑色的HUD，找到view，右侧有个小圈圈，鼠标放到上面会变成小加号，拖动到xib上。<br><img src="http://ww1.sinaimg.cn/large/9c2363adgw1eo7rn9la4gj20y40ecwgm.jpg" alt=""></p>
+<blockquote>
+<p>   NOTE:</p>
+<p>   自己创建的Xib与控制器关联需要两步：</p>
+<p>   1.将xib与自己的控制器类究竟强行管理关联</p>
+<p>   2.xi的view与控制器的view进行关联</p>
+</blockquote>
+<h3 id="1-3-2_控件的添加">1.3.2 控件的添加</h3><p> 使用方式就是大家经常所说的托控件，只需要将右下角的控件拖到我们页面中：<br> <img src="http://ww1.sinaimg.cn/large/9c2363adgw1eo7pwi0fvzj21kw0yeags.jpg" alt=""></p>
+<p> 我们把控件都摆放好位置之后，运行会发现并不是居中的，这是因为我们Size Classes的关系，大家暂时先不用管，你要做的就是把所有的控件往左边靠，然后摆个大概的位置就好了。</p>
+<h3 id="1-3-3_控件与属性或者事件的绑定">1.3.3 控件与属性或者事件的绑定</h3><p>当我们摆放好控件的位置之后，就可以运行看效果了，这个时候效果都出现没有问题，但是我们会发现点击的时候没有作用，那是因为我们还没有给控件绑定事件，那么，该如何做呢？</p>
+<p>打开<code>Assistant Editor</code>编辑模式，也就是同时可以显示两个类的文件的模式，左侧显示我们的xib文件，右侧显示xib文件对应的控制器。</p>
+<p>正式开始拖线，选中要生成属性的控件，按住<code>Control</code>键，拖动到右侧，就会出现如下效果：</p>
+<p><img src="http://ww2.sinaimg.cn/large/9c2363adgw1eo7s4ekfjyj21a80sin2n.jpg" alt=""></p>
+<p>松开手后，你会看到这样一个框：<br><img src="http://ww2.sinaimg.cn/large/9c2363adgw1eo7qn53z9kj20fg0860th.jpg" alt=""></p>
+<p>connection中选择默认的Outlet，意思是生成一个属性。然后在Name中输入属性的名字，其它地方不用修改，选择，Connect按钮。这样我们就将控件与控制器中的一个属性关联起来了。</p>
+<p><img src="http://ww1.sinaimg.cn/large/9c2363adgw1eo7qx1mei1j20fg096dgq.jpg" alt=""></p>
+<p>拖动按钮的事件几乎相同，选中一个button，然后按住<code>Control</code>键进行拖动，刚刚connection中不再是选择Outlet，而是选择Action，Name的位置填写事件方法的名称，type的位置填写生成方法的参数类型，其它默认，然后点击Connect按钮，进行事件的创建。</p>
+<p>创建好了事件之后，我们去实现事件方法，效果很简单：点击按钮，显示输入的用户名和密码：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#pragma mark - 按钮事件</span></span><br><span class="line"><span class="preprocessor">#pragma mark 登录</span></span><br><span class="line">- (<span class="keyword">IBAction</span>)loginButtonAction:(<span class="built_in">UIButton</span> *)sender</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSString</span> *messageStr = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@\n%@"</span>, _userNameTextField<span class="variable">.text</span>, _passwordTextField<span class="variable">.text</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">UIAlertController</span> *alertC = [<span class="built_in">UIAlertController</span> alertControllerWithTitle:<span class="string">@"提示"</span> message:messageStr preferredStyle:<span class="built_in">UIAlertControllerStyleAlert</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">UIAlertAction</span> *cancelAlertAction = [<span class="built_in">UIAlertAction</span> actionWithTitle:<span class="string">@"取消"</span> style:<span class="built_in">UIAlertActionStyleCancel</span> handler:^(<span class="built_in">UIAlertAction</span> *action) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"取消按钮"</span>);</span><br><span class="line">    &#125;];</span><br><span class="line">    [alertC addAction:cancelAlertAction];</span><br><span class="line"></span><br><span class="line">    [<span class="keyword">self</span> showDetailViewController:alertC sender:<span class="literal">nil</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-4_可视化编程有什么优势？">1.4 可视化编程有什么优势？</h2><ul>
+<li>xib让我们创建应用程序的页面更加的快速，节省了更多的时间</li>
+<li>快速的帮助我们创建出来了属性和方法，还是节省了很多的时间</li>
+<li>xib比较简洁，只描述了当前页面的一些内容</li>
+<li>所见即所得，比代码直观</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/03/可视化编程之Storyboard/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          可视化编程之Storyboard
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/12/19/Vim-编辑器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vim 编辑器</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy;2014 Green
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
