@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Block技术中的weak-strong | Green</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、看一看什么是Block我们使用^运算符来声明一个Block变量，而且在声明完一个Block变量后要像声明普通变量一样，最后要加;。
+声明Block变量接下来，我们通过一个例子来声明一个简单的Block变量.
+int (^block)( int ) = NULL;
+我们一起来看一下声明Block变量的语法
+数据返回值类型  (^变量名) (参数列表) = NULL;
+赋值Block变量block">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Block技术中的weak-strong">
+<meta property="og:url" content="http://yoursite.com/2015/03/10/Block技术中的weak-strong/index.html">
+<meta property="og:site_name" content="Green">
+<meta property="og:description" content="一、看一看什么是Block我们使用^运算符来声明一个Block变量，而且在声明完一个Block变量后要像声明普通变量一样，最后要加;。
+声明Block变量接下来，我们通过一个例子来声明一个简单的Block变量.
+int (^block)( int ) = NULL;
+我们一起来看一下声明Block变量的语法
+数据返回值类型  (^变量名) (参数列表) = NULL;
+赋值Block变量block">
+<meta property="og:updated_time" content="2015-12-10T08:47:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Block技术中的weak-strong">
+<meta name="twitter:description" content="一、看一看什么是Block我们使用^运算符来声明一个Block变量，而且在声明完一个Block变量后要像声明普通变量一样，最后要加;。
+声明Block变量接下来，我们通过一个例子来声明一个简单的Block变量.
+int (^block)( int ) = NULL;
+我们一起来看一下声明Block变量的语法
+数据返回值类型  (^变量名) (参数列表) = NULL;
+赋值Block变量block">
+  
+    <link rel="alternative" href="/atom.xml" title="Green" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://a.hiphotos.baidu.com/image/h%3D300/sign=f92d8f72912bd4075dc7d5fd4b899e9c/9f2f070828381f30192d9cf3af014c086e06f0b0.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Green</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/tags/相册">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CocoaPosd使用详解/" style="font-size: 10px;">CocoaPosd使用详解</a> <a href="/tags/Vim-编辑器/" style="font-size: 10px;">Vim 编辑器</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo教程/" style="font-size: 10px;">hexo教程</a> <a href="/tags/hexo新建博文/" style="font-size: 10px;">hexo新建博文</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS-OC/" style="font-size: 10px;">iOS-OC</a> <a href="/tags/linux基础/" style="font-size: 10px;">linux基础</a> <a href="/tags/可视化编程/" style="font-size: 15px;">可视化编程</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/真机/" style="font-size: 10px;">真机</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Green</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://a.hiphotos.baidu.com/image/h%3D300/sign=f92d8f72912bd4075dc7d5fd4b899e9c/9f2f070828381f30192d9cf3af014c086e06f0b0.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Green</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/tags/相册">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Block技术中的weak-strong" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/03/10/Block技术中的weak-strong/" class="article-date">
+  	<time datetime="2015-03-10T07:30:00.000Z" itemprop="datePublished">2015-03-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Block技术中的weak-strong
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-OC/">iOS-OC</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h3 id="一、看一看什么是Block">一、看一看什么是Block</h3><p>我们使用^运算符来声明一个Block变量，而且在声明完一个Block变量后要像声明普通变量一样，最后要加;。</p>
+<h3 id="声明Block变量">声明Block变量</h3><p>接下来，我们通过一个例子来声明一个简单的Block变量.</p>
+<pre><code><span class="built_in">int</span> (^block)( <span class="built_in">int</span> ) = <span class="literal">NULL</span><span class="comment">;</span>
+</code></pre><p>我们一起来看一下声明Block变量的语法</p>
+<p>数据返回值类型  (^变量名) (参数列表) = NULL;</p>
+<h3 id="赋值Block变量">赋值Block变量</h3><pre><code>block = ^(int <span class="keyword">m</span>){
+ <span class="keyword">return</span> <span class="keyword">m</span> * <span class="keyword">m</span>; 
+};
+</code></pre><h3 id="使用Block变量">使用Block变量</h3><p>//通过使用block变量,计算整型常量10的平方,并且打印在控制器输出<br>NSLog(@”10的平方是:%d”,block(10));<br>注意，到目前我们应该有发现block变量的使用步骤，有类似于函数的步骤</p>
+<p>首先都要声明(声明函数,声明block变量);<br>然后都要进行实现(实现函数，为block变量赋值实现过程);<br>最后都要进行调用才能实现具体功能<br>二、看一看如何直接使用block参数</p>
+<h3 id="数组排序">数组排序</h3><pre><code><span class="comment">//声明变量</span>
+<span class="built_in">NSMutableArray</span> *mutableArray = [[<span class="built_in">NSMutableArray</span> alloc] initWithObjects:<span class="string">@"5"</span>,<span class="string">@"2"</span>,<span class="string">@"3"</span>,<span class="string">@"9"</span>,<span class="string">@"7"</span>, <span class="literal">nil</span>];
+
+  <span class="comment">//直接使用block进行数组升序排序</span>
+  [mutableArray sortUsingComparator:^<span class="built_in">NSComparisonResult</span>(<span class="keyword">id</span> obj1, <span class="keyword">id</span> obj2) {
+  <span class="comment">//将两个参数转换为字符串的对象</span>
+  <span class="built_in">NSString</span> *value1 = (<span class="built_in">NSString</span> *)obj1;
+  <span class="built_in">NSString</span> *value2 = (<span class="built_in">NSString</span> *)obj2;
+
+  <span class="comment">//value1与value2两个对象的比较结果直接返回</span>
+  <span class="keyword">return</span> [value1 compare:value2];
+  }];
+
+  <span class="comment">//打印可变数组变量</span>
+  <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,mutableArray);
+</code></pre><h3 id="简单的网络异步请求">简单的网络异步请求</h3><pre><code>//声明网络地址对象
+<span class="type">NSURL</span> *url = [<span class="type">NSURL</span> <span class="type">URLWithString</span>:@<span class="string">"http://www.qq.com"</span>];
+
+//根据网络地址对象,声明网络请求对象
+<span class="type">NSURLRequest</span> *request = [<span class="type">NSURLRequest</span> requestWithURL:url];
+
+//直接使用<span class="keyword">block</span>变量完成链接成功后的数据返回功能
+[<span class="type">NSURLConnection</span> sendAsynchronousRequest:request queue:[<span class="type">NSOperationQueue</span> mainQueue] completionHandler:^(<span class="type">NSURLResponse</span> *response, <span class="type">NSData</span> *data, <span class="type">NSError</span> *connectionError) {
+//将二进制数据使用utf8编码转换成字符串对象
+<span class="type">NSString</span> *<span class="literal">result</span> = [[<span class="type">NSString</span> alloc] initWithData:data encoding:<span class="type">NSUTF8StringEncoding</span>];
+
+//打印链接完成后的结果
+<span class="type">NSLog</span>(@<span class="string">"%@"</span>,<span class="literal">result</span>);
+
+}];
+</code></pre><p>　　可以看出ios平台中的很多功能都已经集成了Block语法的处理方法.</p>
+<ul>
+<li>三、看一看深入理解Block语法</li>
+</ul>
+<p>在本节，主要要去介绍的就是使用__block修饰的变量能够完成的作用。</p>
+<p>先来看一个例子。</p>
+<pre><code>//声明一个局部整型变量
+<span class="type">int</span> intValue = <span class="number">3</span>;
+
+//声明一个返回值为<span class="type">int</span>,一个<span class="type">int</span>参数的<span class="keyword">block</span>变量
+<span class="type">int</span> (^<span class="keyword">block</span>)(<span class="type">int</span>) = ^(<span class="type">int</span> m){
+    <span class="keyword">return</span> m * intValue;
+};
+
+//调用<span class="keyword">block</span>变量,<span class="number">5</span>作为参数之后的结果
+<span class="type">NSLog</span>(@<span class="string">"block(5) = %d"</span>,<span class="keyword">block</span>(<span class="number">5</span>));
+</code></pre><p>在上面的例子中,我们将intValue变量称为block执行过程中的外部变量,在block执行过程中可以直接使用该外部变量。</p>
+<p>再看一个例子。　</p>
+<pre><code>//声明一个局部整型变量
+<span class="type">int</span> intValue = <span class="number">3</span>;
+
+//声明一个返回值为<span class="type">int</span>,一个<span class="type">int</span>参数的<span class="keyword">block</span>变量
+<span class="type">int</span> (^<span class="keyword">block</span>)(<span class="type">int</span>) = ^(<span class="type">int</span> m){
+    intValue++;
+    <span class="keyword">return</span> m * intValue;
+};
+
+//调用<span class="keyword">block</span>变量,<span class="number">5</span>作为参数之后的结果
+<span class="type">NSLog</span>(@<span class="string">"block(5) = %d"</span>,<span class="keyword">block</span>(<span class="number">5</span>));
+</code></pre><p>在上面的例子中,我们编译程序后发现编译器会有红色错误,错误提示为<br><code>Variable is not assignable (missing __block type specifier)</code></p>
+<p>为什么会出现不能被赋值的错误提示呢？<br>block在实现时就会对它引用到的它所在方法中定义的栈变量进行一次只读拷贝<br>在 block 块内使用该只读拷贝。<br>那为了避免上述错误，就要使用__block修饰符来修饰外部变量,用来通知编译器该外部变量intValue与block中的intValue指的是同一块儿内存地址，而不需要内存拷贝。</p>
+<p>如下例:</p>
+<pre><code>//将intValue局部整型变量使用__block修饰符进行修饰
+__block <span class="type">int</span> intValue = <span class="number">3</span>;
+
+//声明一个返回值为<span class="type">int</span>,一个<span class="type">int</span>参数的<span class="keyword">block</span>变量
+<span class="type">int</span> (^<span class="keyword">block</span>)(<span class="type">int</span>) = ^(<span class="type">int</span> m){
+    intValue++;
+    <span class="keyword">return</span> m * intValue;
+};
+
+//调用<span class="keyword">block</span>变量,<span class="number">5</span>作为参数之后的结果
+<span class="type">NSLog</span>(@<span class="string">"block(5) = %d"</span>,<span class="keyword">block</span>(<span class="number">5</span>));
+</code></pre><ul>
+<li>四、使用Block要注意的内存问题</li>
+</ul>
+<p>使用weak–strong dance技术来避免循环引用</p>
+<p>举例如下</p>
+<pre><code><span class="comment">//</span>
+<span class="comment">//  ViewController.m</span>
+<span class="comment">//</span>
+<span class="comment">//  Created by me.</span>
+<span class="comment">//</span>
+
+<span class="preprocessor">#import <span class="title">"ViewController.h"</span></span>
+
+<span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()</span>
+
+<span class="keyword">@end</span>
+
+<span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span>
+{
+<span class="keyword">id</span> observer;
+}
+
+- (<span class="keyword">void</span>)viewDidLoad
+{
+[<span class="keyword">super</span> viewDidLoad];
+
+<span class="comment">//添加观察者,观察主题修改消息通知,并且在收到消息通知后,打印视图控制器对象</span>
+observer = [[<span class="built_in">NSNotificationCenter</span> defaultCenter] addObserverForName:<span class="string">@"kThemeChangeNotification"</span> object:<span class="literal">nil</span> queue:[<span class="built_in">NSOperationQueue</span> mainQueue] usingBlock:^(<span class="built_in">NSNotification</span> *note) {
+    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,<span class="keyword">self</span>);
+}];
+}
+
+<span class="comment">//当视图控制器对象销毁时,移除观察者</span>
+- (<span class="keyword">void</span>)dealloc
+{
+<span class="keyword">if</span> (observer) {
+    [[<span class="built_in">NSNotificationCenter</span> defaultCenter] removeObserver:observer];
+}
+}
+<span class="keyword">@end</span>
+</code></pre><p>在上面代码中，我们添加向通知中心注册了一个观察者，然后在 dealloc 时解除该注册，一切看起来正常。但这里有两个问题：<br>在消息通知 block 中引用到了 self，在这里 self 对象被 block 保留一次，而 observer 又 retain 该 block的一份拷贝，通知中心又持有 observer。因此只要 observer对象还没有被解除注册，block 就会一直被通知中心持有，从而 self 就不会被释放，其 dealloc 就不会被调用。而我们却又期望在 dealloc 中通过 removeObserver 来解除注册以消除通知中心对 observer/block 的 保留次数。<br>同时，observer 是在 self 所在类中定义赋值，因此是被 self retain 的，这样就形成了循环引用。<br>解决方式如下.</p>
+<pre><code><span class="comment">//</span>
+<span class="comment">//  ViewController.m</span>
+<span class="comment">//</span>
+<span class="comment">//  Created by lewis.</span>
+<span class="comment">//</span>
+
+<span class="preprocessor">#import <span class="title">"ViewController.h"</span></span>
+
+<span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()</span>
+
+<span class="keyword">@end</span>
+
+<span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span>
+{
+<span class="keyword">id</span> observer;
+}
+
+- (<span class="keyword">void</span>)viewDidLoad
+{
+[<span class="keyword">super</span> viewDidLoad];
+
+<span class="comment">//先声明一个weak弱对象</span>
+__<span class="keyword">weak</span> ViewController *wSelf = <span class="keyword">self</span>;
+
+<span class="comment">//添加观察者,观察主题修改消息通知,并且在收到消息通知后,打印视图控制器对象</span>
+observer = [[<span class="built_in">NSNotificationCenter</span> defaultCenter] addObserverForName:<span class="string">@"kThemeChangeNotification"</span> object:<span class="literal">nil</span> queue:[<span class="built_in">NSOperationQueue</span> mainQueue] usingBlock:^(<span class="built_in">NSNotification</span> *note){
+
+    <span class="comment">//在block的执行过程中,使用强对象对弱对象进行引用</span>
+    ViewController *bSelf = wSelf;
+    <span class="keyword">if</span> (bSelf) {
+        <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,bSelf);
+    }
+}];
+}
+
+- (<span class="keyword">void</span>)didReceiveMemoryWarning
+{
+[<span class="keyword">super</span> didReceiveMemoryWarning];
+<span class="comment">// Dispose of any resources that can be recreated.</span>
+}
+
+<span class="comment">//当视图控制器对象销毁时,移除观察者</span>
+- (<span class="keyword">void</span>)dealloc
+{
+<span class="keyword">if</span> (observer) {
+    [[<span class="built_in">NSNotificationCenter</span> defaultCenter] removeObserver:observer];
+}
+}
+
+<span class="keyword">@end</span>
+</code></pre><p>在 <code>block</code> 之前定义对 <code>self</code> 的一个弱引用 <code>wSelf</code>，因为是弱引用，所以当 <code>self</code> 被释放时 <code>wSelf</code> 会变为<code>nil</code>；<br>在<code>block</code> 中引用该弱应用，考虑到多线程情况，通过使用强引用 bSelf 来引用该弱引用，这时如果 <code>self</code> 不为<code>nil</code> 就会 <code>retain self</code>，以防止在后面的使用过程中 <code>self</code> 被释放;<br>在之后的 <code>block</code> 块中使用该强引用 <code>bself</code>，注意在使用前要对 <code>bSelf</code> 进行了 <code>nil</code> 检测，因为多线程环境下在用弱引用 <code>wSelf</code> 对强引用 <code>bSelf</code> 赋值时，弱引用 <code>wSelf</code> 可能已经为 <code>nil</code> 了。</p>
+<p>　　通过这种<code>weak-strong</code>手法，<code>block</code> 就不会持有 <code>self</code> 的引用，从而打破了循环引用。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/01/iOS添加测试设备与调试/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          iOS添加测试设备与调试
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/03/10/转-关于应用程序生命周期的问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[转]关于应用程序生命周期的问题</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy;2014 Green
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

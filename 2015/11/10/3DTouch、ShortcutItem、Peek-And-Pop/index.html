@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>3DTouch、ShortcutItem、Peek And Pop | Green</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="3DTouch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3DTouch、ShortcutItem、Peek And Pop">
+<meta property="og:url" content="http://yoursite.com/2015/11/10/3DTouch、ShortcutItem、Peek-And-Pop/index.html">
+<meta property="og:site_name" content="Green">
+<meta property="og:description" content="3DTouch">
+<meta property="og:image" content="http://i12.tietuku.com/14bc7ec46d5364ab.jpg">
+<meta property="og:image" content="http://i12.tietuku.com/3aa54dab286d6e1c.jpg">
+<meta property="og:image" content="http://i12.tietuku.com/544e882ddf85ae59.jpg">
+<meta property="og:updated_time" content="2015-12-10T07:06:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="3DTouch、ShortcutItem、Peek And Pop">
+<meta name="twitter:description" content="3DTouch">
+  
+    <link rel="alternative" href="/atom.xml" title="Green" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://a.hiphotos.baidu.com/image/h%3D300/sign=f92d8f72912bd4075dc7d5fd4b899e9c/9f2f070828381f30192d9cf3af014c086e06f0b0.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Green</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/tags/相册">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CocoaPosd使用详解/" style="font-size: 10px;">CocoaPosd使用详解</a> <a href="/tags/Vim-编辑器/" style="font-size: 10px;">Vim 编辑器</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo教程/" style="font-size: 10px;">hexo教程</a> <a href="/tags/hexo新建博文/" style="font-size: 10px;">hexo新建博文</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS-OC/" style="font-size: 10px;">iOS-OC</a> <a href="/tags/linux基础/" style="font-size: 10px;">linux基础</a> <a href="/tags/可视化编程/" style="font-size: 15px;">可视化编程</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/真机/" style="font-size: 10px;">真机</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Green</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://a.hiphotos.baidu.com/image/h%3D300/sign=f92d8f72912bd4075dc7d5fd4b899e9c/9f2f070828381f30192d9cf3af014c086e06f0b0.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Green</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/tags/相册">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="ios9-3DTouch、ShortcutItem、Peek-And-Pop" class="article article-type-ios9" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/10/3DTouch、ShortcutItem、Peek-And-Pop/" class="article-date">
+  	<time datetime="2015-11-10T03:01:28.000Z" itemprop="datePublished">2015-11-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      3DTouch、ShortcutItem、Peek And Pop
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="3DTouch">3DTouch</h3><a id="more"></a>
+<p><img src="http://i12.tietuku.com/14bc7ec46d5364ab.jpg" alt=""></p>
+<h4 id="UITouch类里API的变化">UITouch类里API的变化</h4><h5 id="iOS9中添加的属性">iOS9中添加的属性</h5><p><code>altitudeAngle</code></p>
+<ul>
+<li><p>当笔平行于平面时,该值为0</p>
+</li>
+<li><p>当笔垂直于平面时,该值为Pi / 2</p>
+</li>
+</ul>
+<p><code>estimatedProperties</code></p>
+<ul>
+<li><p>当前触摸对象估计的触摸特性</p>
+</li>
+<li><p>返回值是UITouchPropertyies</p>
+</li>
+</ul>
+<p><code>updatedProperties</code></p>
+<ul>
+<li><p>当前触摸对象已经更新的触摸特性</p>
+</li>
+<li><p>返回值是UITouchPropertyies</p>
+</li>
+</ul>
+<p><code>estimationUpdateIndex</code></p>
+<ul>
+<li><p>当每个触摸对象的触摸特性发生变化时，该值将会单独增加</p>
+</li>
+<li><p>返回值是NSNumber</p>
+</li>
+</ul>
+<h5 id="iOS9中添加的方法">iOS9中添加的方法</h5><p><code>- PreciseLocationInView:</code></p>
+<ul>
+<li><p>当前触摸对象的坐标<br><code>- PrecisePreviousLocationInView:</code></p>
+</li>
+<li><p>当前触摸对象的前置坐标<br><code>- azimuthAngleInview:</code></p>
+</li>
+<li><p>沿着x轴正向的方位角</p>
+</li>
+<li><p>当与x轴正向方向相同时,该值为0</p>
+</li>
+<li><p>当view参数为nil时，默认为keyWindow</p>
+</li>
+</ul>
+<p><code>- azimuthUnitVectorInView:</code></p>
+<ul>
+<li><p>当前触摸对象的方向上的单位向量</p>
+</li>
+<li><p>当view参数为nil时，默认为keyWindow</p>
+</li>
+</ul>
+<h4 id="UIForceTouchCapability">UIForceTouchCapability</h4><p><code>UIForceTouchCapabilityUnknown</code></p>
+<ul>
+<li>不能确定是否支持压力感应<br><code>UIForceTouchCapabilityUnavailable</code></li>
+<li>不能支持压力感应<br><code>UIForceTouchCapabilityAvailable</code></li>
+<li><p>可以支持压力感应</p>
+<h4 id="UITouchType">UITouchType</h4><p><code>UITouchTypeDirect</code></p>
+</li>
+<li><p>垂直的触摸类型<br><code>UITouchTypeIndirect</code></p>
+</li>
+<li>非初值的触摸类型<br><code>UITouchTypeStylus</code></li>
+<li>水平的触摸类型<br><code>UITouchProperties</code><br><code>UITouchPropertyForce</code></li>
+</ul>
+<hr>
+<h3 id="ShortcutItem">ShortcutItem</h3><hr>
+<p><img src="http://i12.tietuku.com/3aa54dab286d6e1c.jpg" alt=""></p>
+<h4 id="静态方式">静态方式</h4><ul>
+<li>打开Info.plist文件</li>
+<li><p>在对应UIApplicationShortcutItems关键字下添加item</p>
+<h4 id="动态方式">动态方式</h4><h5 id="修改当前应用程序的某个shortcutItem">修改当前应用程序的某个shortcutItem</h5><pre><code><span class="comment">//获取第0个shortcutItem  </span>
+id oldItem = [existingShortcutItems <span class="string">objectAtIndex:</span> <span class="number">0</span>];  
+<span class="comment">//将旧的shortcutItem改变为可修改类型shortcutItem  </span>
+id mutableItem = [oldItem mutableCopy];  
+<span class="comment">//修改shortcutItem的显示标题  </span>
+[mutableItem <span class="string">setLocalizedTitle:</span> @“Click Lewis”];
+</code></pre><h5 id="获取当前应用程序的shortcutItems">获取当前应用程序的shortcutItems</h5><pre><code><span class="comment">//获取当前应用程序对象  </span>
+<span class="built_in">UIApplication</span> *app = [<span class="built_in">UIApplication</span> sharedApplication];  
+<span class="comment">//获取一个应用程序对象的shortcutItem列表  </span>
+<span class="keyword">id</span> existingShortcutItems = [app shortcutItems];
+</code></pre><h5 id="重置当前应用程序的shortcutItems">重置当前应用程序的shortcutItems</h5><pre><code><span class="comment">//根据旧的shortcutItems生成可变shortcutItems数组  </span>
+id updatedShortcutItems = [existingShortcutItems mutableCopy];  
+<span class="comment">//修改可变shortcutItems数组中对应index下的元素为新的shortcutItem  </span>
+[updatedShortcutItems <span class="string">replaceObjectAtIndex:</span> <span class="number">0</span> <span class="string">withObject:</span> mutableItem];  
+<span class="comment">//修改应用程序对象的shortcutItems为新的数组  </span>
+[app <span class="string">setShortcutItems:</span> updatedShortcutItems];
+</code></pre><h5 id="创建一个新的UIApplicationShortcutItem">创建一个新的UIApplicationShortcutItem</h5></li>
+<li><p>初始化函数</p>
+<ul>
+<li>initWithType:localizedTitle:localizedSubtitle:icon:userInfo:</li>
+<li>initWithType:localizedTitle:</li>
+</ul>
+</li>
+<li><p>属性</p>
+<ul>
+<li><p>localizedTitle:NSString</p>
+</li>
+<li><p>localizedSubtitle:NSString</p>
+</li>
+<li><p>type:NSString</p>
+</li>
+<li><p>icon:UIApplicationShortcutIcon</p>
+</li>
+<li><p>userInfo:NSDictionary</p>
+</li>
+<li><p>只有只读特性，想要进行修改时，需要通过mutableCopy方法转变为<br>NSMutableApplicationShortcutItem</p>
+<h4 id="创建一个新的Item图标">创建一个新的Item图标</h4></li>
+</ul>
+</li>
+<li><p>初始化函数</p>
+<ul>
+<li><p>iconWithType:</p>
+</li>
+<li><p>iconWithTemplateImageName:</p>
+</li>
+<li><p>iconWithContact:</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="当程序启动时">当程序启动时</h4><ul>
+<li>判断launchOptions字典内的UIApplicationLaunchOptionsShortcutItemKey是否为空</li>
+<li>当不为空时,application:didFinishLaunchWithOptions方法返回false，否则返回true</li>
+<li>在application:performActionForShortcutItem:completionHandler方法内处理点击事件</li>
+</ul>
+<hr>
+<h3 id="Peek_and_Pop">Peek and Pop</h3><hr>
+<p><img src="http://i12.tietuku.com/544e882ddf85ae59.jpg" alt=""><br>注册预览功能的代理对象和源视图<br>代理对象需要接受UIViewControllerPreviewingDelegate协议<br>  @interface RootVC<uiviewcontrollerpreviewingdelegate><br>  {}<br>  @end<br>代理对象实现协议内的Peek和Pop方法</uiviewcontrollerpreviewingdelegate></p>
+<pre><code><span class="class"><span class="keyword">@implementation</span> <span class="title">RootVC</span>  </span>
+- (<span class="built_in">UIViewController</span> *)previewingContext:(<span class="keyword">id</span>&lt;<span class="built_in">UIViewControllerPreviewing</span>&gt;)context viewControllerForLocation:(<span class="built_in">CGPoint</span>) point  
+{  
+<span class="built_in">UIViewController</span> *childVC = [[<span class="built_in">UIViewController</span> alloc] init];  
+childVC<span class="variable">.preferredContentSize</span> = <span class="built_in">CGSizeMake</span>(<span class="number">0.0</span>f,<span class="number">300</span>f);  
+
+<span class="built_in">CGRect</span> rect = <span class="built_in">CGRectMake</span>(<span class="number">10</span>, point<span class="variable">.y</span> - <span class="number">10</span>, <span class="keyword">self</span><span class="variable">.view</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.width</span> - <span class="number">20</span>,<span class="number">20</span>);  
+context<span class="variable">.sourceRect</span> = rect;  
+<span class="keyword">return</span> childVC;  
+}  
+- (<span class="keyword">void</span>)previewContext:(<span class="keyword">id</span>&lt;<span class="built_in">UIViewControllerPreviewing</span>&gt;)context commitViewController:(<span class="built_in">UIViewController</span>*)vc  
+{  
+[<span class="keyword">self</span> showViewController:vc sender:<span class="keyword">self</span>];  
+}  
+<span class="keyword">@end</span>
+</code></pre><h4 id="注册方法声明在UIViewController类内">注册方法声明在UIViewController类内</h4><pre><code>[<span class="keyword">self </span>registerForPreviewingWithDelegate:<span class="keyword">self </span>sourceView:<span class="keyword">self.view]; </span>      
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/20/使用WKWebView替换UIWebView/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          使用WKWebView替换UIWebView
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/10/NSURLSession下载与缓存/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">NSURLSession下载与缓存</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy;2014 Green
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

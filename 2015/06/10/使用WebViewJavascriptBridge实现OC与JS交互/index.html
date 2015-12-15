@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用WebViewJavascriptBridge实现OC与JS交互 | Green</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言当下,很多APP里面都会有HTML5网页,我们除了简单的用WebView加载显示外，很多情况下，我们还需要和WebView进行交互,比如点击WebView上面的按钮调用OC端的函数实现具体操作。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用WebViewJavascriptBridge实现OC与JS交互">
+<meta property="og:url" content="http://yoursite.com/2015/06/10/使用WebViewJavascriptBridge实现OC与JS交互/index.html">
+<meta property="og:site_name" content="Green">
+<meta property="og:description" content="前言当下,很多APP里面都会有HTML5网页,我们除了简单的用WebView加载显示外，很多情况下，我们还需要和WebView进行交互,比如点击WebView上面的按钮调用OC端的函数实现具体操作。">
+<meta property="og:updated_time" content="2015-12-10T07:53:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用WebViewJavascriptBridge实现OC与JS交互">
+<meta name="twitter:description" content="前言当下,很多APP里面都会有HTML5网页,我们除了简单的用WebView加载显示外，很多情况下，我们还需要和WebView进行交互,比如点击WebView上面的按钮调用OC端的函数实现具体操作。">
+  
+    <link rel="alternative" href="/atom.xml" title="Green" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://a.hiphotos.baidu.com/image/h%3D300/sign=f92d8f72912bd4075dc7d5fd4b899e9c/9f2f070828381f30192d9cf3af014c086e06f0b0.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Green</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/tags/相册">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CocoaPosd使用详解/" style="font-size: 10px;">CocoaPosd使用详解</a> <a href="/tags/Vim-编辑器/" style="font-size: 10px;">Vim 编辑器</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo教程/" style="font-size: 10px;">hexo教程</a> <a href="/tags/hexo新建博文/" style="font-size: 10px;">hexo新建博文</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS-OC/" style="font-size: 10px;">iOS-OC</a> <a href="/tags/linux基础/" style="font-size: 10px;">linux基础</a> <a href="/tags/可视化编程/" style="font-size: 15px;">可视化编程</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/真机/" style="font-size: 10px;">真机</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Green</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://a.hiphotos.baidu.com/image/h%3D300/sign=f92d8f72912bd4075dc7d5fd4b899e9c/9f2f070828381f30192d9cf3af014c086e06f0b0.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Green</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/tags/相册">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-使用WebViewJavascriptBridge实现OC与JS交互" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/06/10/使用WebViewJavascriptBridge实现OC与JS交互/" class="article-date">
+  	<time datetime="2015-06-10T02:22:27.000Z" itemprop="datePublished">2015-06-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用WebViewJavascriptBridge实现OC与JS交互
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="前言">前言</h4><p>当下,很多APP里面都会有HTML5网页,我们除了简单的用WebView加载显示外，很多情况下，我们还需要和WebView进行交互,比如点击WebView上面的按钮调用OC端的函数实现具体操作。</p>
+<a id="more"></a>
+<p>因此今天为大家介绍一个优秀的开源小项目,就是我们今天的主角–<code>WebViewJavascriptBridge</code>。它主要帮助我们优雅的实现OC与JS的交互,非常方便简洁。</p>
+<p>当然,有很多优秀的开发者写过WebViewJavascriptBridge的使用包括实现原理,首先表示感激和敬意。但是作为一个初学者或者一个急于实现功能的人来说,大部分时候我们更希望一个直奔主题的文章。所以,本文的核心就是WebViewJavascriptBridge在实际开发中的使用。<br>使用步骤<br>去Github上下载<code>WebJavaScriptBridge</code><br>解压缩包,将<code>WebViewJavascriptBridge</code>文件夹拖到你的工程中</p>
+<p>在需要使用<code>WebViewJavascriptBridge</code>的类文件中引入头文件<code>WebViewJavascriptBridge.h</code><br>加载UIWebView,遵守<code>&lt;UIWebViewDelegate&gt;</code>协议<br>具体使用<br>创建并初始化WebJavaScriptBridge实例</p>
+<pre><code>   <span class="preprocessor">#import <span class="title">"ExampleUIWebViewController.h"</span></span>
+   <span class="preprocessor">#import <span class="title">"WebViewJavascriptBridge.h"</span></span>
+
+  <span class="class"><span class="keyword">@interface</span> <span class="title">ExampleUIWebViewController</span> ()</span>
+  <span class="comment">//声明`WebViewJavascriptBridge`对象为属性</span>
+   <span class="keyword">@property</span> WebViewJavascriptBridge* bridge;
+
+  <span class="keyword">@end</span>
+
+  - (<span class="keyword">void</span>)viewWillAppear:(<span class="built_in">BOOL</span>)animated {
+
+   <span class="comment">//用UIWebView加载web</span>
+    <span class="built_in">UIWebView</span>* webView = [[<span class="built_in">UIWebView</span> alloc] initWithFrame:<span class="keyword">self</span><span class="variable">.view</span><span class="variable">.bounds</span>];
+
+ <span class="comment">//设置能够进行桥接 </span>
+    [WebViewJavascriptBridge enableLogging];
+ <span class="comment">// 初始化*WebViewJavascriptBridge*实例,设置代理,进行桥接</span>
+   _bridge = [WebViewJavascriptBridge bridgeForWebView:webView webViewDelegate:<span class="keyword">self</span> handler:^(<span class="keyword">id</span>         data, WVJBResponseCallback responseCallback) {
+
+<span class="built_in">NSLog</span>(<span class="string">@"ObjC received message from JS: %@"</span>, data);
+     responseCallback(<span class="string">@"Response for message from ObjC"</span>);
+     }];
+
+}
+</code></pre><h4 id="JS调用OC">JS调用OC</h4><p>什么是JS调用OC?</p>
+<p>举个例子来说就是在网页中有一个登录按钮,点击登录按钮后,具体的登录功能是由OC端实现的,即登录功能实现需要我们在工程里有一个类似loginMethod的函数去具体操作。<br>工作流程</p>
+<p>站在实际开发的角度来解释,就是假如现在有一个网页,在网页中有个登录按钮需要通过JS调OC的方式实现。那么我们首先需要跟负责网页编码的人员(一般是后台)商定出一个方法名称,也就是给这个登录按钮点击事件取个名字,例如叫loginCallBack。然后我们需要在代码里注册这个事件并负责它的具体实现。当用户点击这个登录按钮的时候,后台就会通知给这个事件的注册者去执行,有点像block的执行顺序。<br>代码实现</p>
+<p>假如我们现在商定了一个事件名称为loginFunc,我们来看一下代码实现。</p>
+<pre><code> /<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
+ /<span class="comment">@param registerHandler 要注册的事件名称(这里我们为loginFunc)</span>
+ /<span class="comment">@param handel 回调block函数 当后台触发这个事件的时候会执行block里面的代码</span>
+<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>/
+[_bridge registerHandler:<span class="comment">@"loginFunc" handler:^(id data, WVJBResponseCallback responseCallback) {</span>
+// data 后台传过来的参数,例如用户名、密码等
+
+  NSLog(<span class="comment">@"testObjcCallback called: %@", data);</span>
+
+//具体的登录事件的实现,这里的login代表实现登录功能的一个OC函数。
+           [self login];   
+
+// responseCallback 给后台的回复    
+
+   responseCallback(<span class="comment">@"Response from testObjcCallback");</span>
+ }];
+</code></pre><h4 id="OC调用JS">OC调用JS</h4><p>什么是OC调用JS</p>
+<p>如果你理解了JS调用OC,那么OC调用JS就应该差不多懂了。同样举个例子,我们的原生APP上有个输入框,我们输入完成后,让它显示在网页上面的用户名处。这样,我们就是OC要实现的一个事件让网页去真正实现了,也就是OC调用JS。<br>OC调用JS</p>
+<p>和JS调用OC的流程大致一样,还是需要和网页编写人员商定出一个事件名,然后在网页里面先把注册这样一个事件并把实现体写好,等到我们OC去触发这个事件(比如点击按钮)就会去网页里面找到这个事件的实现体并执行。<br>代码实现</p>
+<p>假如我们现在商定了一个注册事件,事件名称为registerFunc,我<br>们来代码实现一下    </p>
+<pre><code>   <span class="comment">//不需要传参数,不需要后台返回执行结果</span>
+  [_bridge <span class="string">callHandler:</span>@<span class="string">"registerFunc"</span>];
+
+<span class="comment">//需要传参数,不需要从后台返回执行结果</span>
+  <span class="comment">/***
+   <span class="doctag">@param</span> callHandler 商定的事件名称,用来调用网页里面相应的事件实现
+   <span class="doctag">@param</span> data id类型,相当于我们函数中的参数,向网页传递函数执行需要的参数
+ ***/</span>
+
+ [_bridge <span class="string">callHandler:</span>@<span class="string">"registerFunc"</span> <span class="string">data:</span>@<span class="string">"name"</span>];
+
+<span class="comment">//需要传参数,需要从后台返回执行结果</span>
+
+ [_bridge <span class="string">callHandler:</span>@<span class="string">"registerFunc"</span> <span class="string">data:</span>@<span class="string">"name"</span> <span class="string">responseCallback:</span>^(id responseData) {
+
+    NSLog(@<span class="string">"后台执行完成后返回的数据"</span>);
+
+  }];
+</code></pre><p>发送消息</p>
+<h4 id="概述">概述</h4><p>我们可以单纯地向JS发送数据,比如我们可以在网页加载完成后向网页发送一条加载完成的消息,或者传一个标题。<br>代码实现</p>
+<pre><code><span class="comment">//不需要后台返回执行结果或数据</span>
+[_bridge <span class="string">send:</span>@<span class="string">"红色"</span>];
+
+<span class="comment">//需要后台返回执行结果或数据</span>
+  [_bridge <span class="string">send:</span>@<span class="string">"红色"</span> <span class="string">responseCallback:</span>^(id responseData) {
+
+  NSLog(@<span class="string">"后台执行完成后返回的数据 %@"</span>, responseData);
+
+ }];
+</code></pre><h4 id="注意点">注意点</h4><p>一定要注意和网页端商定的方法名必须要保证OC代码 里和网页编码里统一。在调用之前,必须要先注册事件,写好实现体。<br>总结<br>本文只是简单地介绍了WebViewJavascriptBridge在实际开发中常用的几个方法,还有一些方法没有意义详讲,希望大家在掌握了这几个方法的使用后也去研究一下里面的其他方法。另外,本文重点是让ios工程师能快速使用,一些原理的东西还有JS方面的编码都省略了,可能文中有些地方理解不当或者不够深入,后期会再完善修改.最后,希望大家多提宝贵意见。</p>
+<p>大家可去gitHub下载demo查看源码。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/10/30/如何制作想淘宝口令一样的链接/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          关于iOS的剪贴板基本知识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/19/Vim-编辑器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vim 编辑器</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy;2014 Green
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
